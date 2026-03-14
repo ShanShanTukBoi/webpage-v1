@@ -1,0 +1,98 @@
+{
+  "locations": [
+    {
+      "name": "Melbourne",
+      "lat": -37.8136,
+      "lng": 144.9631
+    },
+    {
+      "name": "Chianti, Italy",
+      "lat": 43.5831,
+      "lng": 11.3187,
+      "posts": [
+        {
+          "title": "Hiking around Greve",
+          "text": "Yummy wine",
+          "photos": [
+            "https://i.imgur.com/onXNuMM.jpg",
+            "https://i.imgur.com/CPXzdvO.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chamonix, France",
+      "lat": 45.9237,
+      "lng": 6.8694,
+      "posts": [
+        {
+          "title": "Tour du Mont Blanc Day 1",
+          "text": "",
+          "photos": [
+            "https://i.imgur.com/mLDKBXl.jpg",
+            "https://i.imgur.com/QS6S1xa.jpg"
+          ]
+        },
+        {
+          "title": "Tour du Mont Blanc Day 2",
+          "text": "Goats!",
+          "photos": [
+            "https://i.imgur.com/SHE6sf5.jpg",
+            "https://i.imgur.com/7MYtLSN.jpg"
+          ]
+        },
+        {
+          "title": "Tour du Mont Blanc Day 3",
+          "text": "",
+          "photos": [
+            "https://i.imgur.com/Jmrq3mW.jpg",
+            "https://i.imgur.com/0ihbRFZ.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Torla-Ordesa, Spain",
+      "lat": 42.6287,
+      "lng": 0.1127,
+      "posts": [
+        {
+          "title": "Torla-Ordesa Town",
+          "text": "Finally reuinted con Josh and Stella",
+          "photos": [
+            "https://i.imgur.com/9GhqS6V.jpg"
+          ]
+        },
+        {
+          "title": "Ordesa y Monte Perdido National Park",
+          "text": "",
+          "photos": [
+            "https://i.imgur.com/V4kYUdi.jpg",
+            "https://i.imgur.com/yZj5MYI.jpg",
+            "https://i.imgur.com/dzknS3w.jpg",
+            "https://i.imgur.com/Nf8QL0E.jpg",
+            "https://i.imgur.com/WvMs4yz.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Granada, Spain",
+      "lat": 37.1825,
+      "lng": -3.6012,
+      "current": true,
+      "posts": [
+        {
+          "title": "Alhambra",
+          "text": "",
+          "photos": [
+            "https://i.imgur.com/yefHSB5.jpg",
+            "https://i.imgur.com/YOZWM8X.jpg",
+            "https://i.imgur.com/EjLNVWs.jpg",
+            "https://i.imgur.com/QQXc6hB.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}
