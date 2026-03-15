@@ -19,6 +19,22 @@
     color: #ccc;
   }
 
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff7f50;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: #ff5733;
+    transform: translateY(-1px);
+  }
+
   /* Gallery grid */
   .gallery {
     column-count: 3; /* number of columns */
