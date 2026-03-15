@@ -93,7 +93,7 @@ fetch(`../data/${galleryName}.json`)
     return res.json();
   })
   .then(data => {
-    // Set title and description
+    document.title = data.title || "Gallery";
     document.getElementById("gallery-title").textContent = data.title || "Gallery";
     document.getElementById("gallery-description").textContent = data.description || "";
 
