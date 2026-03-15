@@ -22,6 +22,8 @@ fetch(dataFile)
   .then(res => res.json())
   .then(data => {
 
+    document.title = data.title || "Travel Map";
+
     const coords = [];
     let foundCurrent = false;
 

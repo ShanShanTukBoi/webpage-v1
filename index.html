@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Travel</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Travel</title>
+  <link rel="stylesheet" href="./style/homepage.css">
 </head>
 
 <body class="landing">
 
-  <section>
-  <h1>Welcome.</h1>
-  <p>This website is setup to allow Grace and I to share photos from our travel.</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome.</h1>
+      <p>This website is for Grace and I to share photos from our travels.</p>
+      <a href="https://github.com/ShanShanTukBoi/webpage-v1" class="btn">GitHub</a>
+    </div>
+  </header>
 
-  <p>Hosted using Github pages: </p>
-  <a href="https://github.com/ShanShanTukBoi/webpage-v1" class="enter-map">
-    https://github.com/ShanShanTukBoi/webpage-v1
-  </a>
-</section>
+  <main class="sections">
+    <section class="travel-card">
+      <h2>2024</h2>
+      <p>This is an example travel map of our trip to Europe in 2024 used to prototype the format for this website.</p>
+      <a href="pages/map.html?trip=europe_2024" class="btn">Explore the map</a>
+    </section>
 
-<section>
-  <h1>2024</h1>
-  <p>This is an example travel map of our trip to Europe in 2024 used to protoype the format for this website.</p>
+    <section class="travel-card">
+      <h2>2025</h2>
+      <p>Galleries from 2025:</p>
+      <a href="pages/gallery.html?gallery=nepal_2025" class="btn">Nepal 2025 gallery</a>
+    </section>
 
-  <a href="pages/map.html?trip=europe_2024" class="enter-map">
-    Explore the map here
-  </a>
-</section>
-  
-<section>
-  <h1>2025</h1>
-
-  <p>Galleries from travel in 2025:</p>
-
-  <a href="pages/gallery.html?gallery=nepal_2025" class="enter-map">
-    Nepal 2026 gallery
-  </a>
-</section>
-
-<section>
-  <h1>2026</h1>
-  <a href="pages/map.html?trip=2026" class="enter-map">
-    Explore the map here
-  </a>
-</section>
+    <section class="travel-card">
+      <h2>2026</h2>
+      <a href="pages/map.html?trip=2026" class="btn">Explore the map</a>
+    </section>
+  </main>
 
 </body>
 </html>
