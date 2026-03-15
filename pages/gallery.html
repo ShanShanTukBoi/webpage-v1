@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+<style>
+  /* General styling */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+  }
+  header {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ccc;
+  }
+
+  /* Gallery grid */
+  .gallery {
+    column-count: 3; /* number of columns */
+    column-gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+
+  /* Lightbox */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  #lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="gallery-title">Gallery</h1>
+  <p id="gallery-description"></p>
+</header>
+
+<div class="gallery" id="gallery"></div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+// 1. Get the gallery name from the URL
+const params = new URLSearchParams(window.location.search);
+const galleryName = params.get("gallery") || "default_gallery"; // fallback
+
+// 2. Fetch the JSON file
+fetch(`../data/${galleryName}.json`)
+  .then(res => {
+    if (!res.ok) throw new Error("Gallery JSON not found");
+    return res.json();
+  })
+  .then(data => {
+    // Set title and description
+    document.getElementById("gallery-title").textContent = data.title || "Gallery";
+    document.getElementById("gallery-description").textContent = data.description || "";
+
+    const galleryDiv = document.getElementById("gallery");
+
+    // Add photos
+    data.photos.forEach(photo => {
+      const img = document.createElement("img");
+      img.src = photo.url ? photo.url : `../images/${galleryName.replace("_gallery","")}/${photo.file}`;
+      img.alt = photo.caption || "";
+      img.loading = "lazy";
+
+      // Click to open lightbox
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+
+      galleryDiv.appendChild(img);
+    });
+  })
+  .catch(err => {
+    document.getElementById("gallery-title").textContent = "Gallery not found";
+    document.getElementById("gallery-description").textContent = "";
+    console.error(err);
+  });
+
+// 3. Lightbox controls
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+
+lightboxClose.onclick = () => lightbox.style.display = "none";
+lightbox.onclick = e => { if(e.target === lightbox) lightbox.style.display = "none"; }
+
+</script>
+
+</body>
+</html>

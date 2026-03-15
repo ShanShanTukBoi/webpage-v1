@@ -1,3 +1,9 @@
+
+/* Get the .json we are trying to load, default to Europe 2024  */
+const params = new URLSearchParams(window.location.search);
+const trip = params.get("trip") || "europe2024"; // default
+const dataFile = `../data/${trip}.json`;
+
 const map = L.map('map').setView([20, 120], 3);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
@@ -12,7 +18,7 @@ const lightboxImg = document.getElementById("lightbox-img");
 const lightboxClose = document.getElementById("lightbox-close");
 
 // Load trip data
-fetch("trip.json")
+fetch(dataFile)
   .then(res => res.json())
   .then(data => {
 

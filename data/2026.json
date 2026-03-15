@@ -1,0 +1,119 @@
+{
+  "locations": [
+    {
+      "name": "Melbourne",
+      "lat": -37.8136,
+      "lng": 144.9631,
+      "current": true,
+      "posts": []
+    },
+    {
+      "name": "Turkey",
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "posts": []
+    },
+    {
+      "name": "Albania",
+      "lat": 41.3275,
+      "lng": 19.8187,
+      "posts": []
+    },
+    {
+      "name": "Montenegro",
+      "lat": 42.4247,
+      "lng": 18.7712,
+      "posts": []
+    },
+    {
+      "name": "Slovenia",
+      "lat": 46.0569,
+      "lng": 14.5058,
+      "posts": []
+    },
+    {
+      "name": "Dolomites, Italy",
+      "lat": 46.4102,
+      "lng": 11.8440,
+      "posts": []
+    },
+    {
+      "name": "Vienna, Austria",
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "posts": []
+    },
+    {
+      "name": "Slovakia",
+      "lat": 48.1486,
+      "lng": 17.1077,
+      "posts": []
+    },
+    {
+      "name": "Krakow, Poland",
+      "lat": 50.0647,
+      "lng": 19.9450,
+      "posts": []
+    },
+    {
+      "name": "Czechia",
+      "lat": 50.0755,
+      "lng": 14.4378,
+      "posts": []
+    },
+    {
+      "name": "Armenia",
+      "lat": 40.1792,
+      "lng": 44.4991,
+      "posts": []
+    },
+    {
+      "name": "Georgia",
+      "lat": 41.7151,
+      "lng": 44.8271,
+      "posts": []
+    },
+    {
+      "name": "Kazakhstan",
+      "lat": 43.2220,
+      "lng": 76.8512,
+      "posts": []
+    },
+    {
+      "name": "Uzbekistan",
+      "lat": 41.2995,
+      "lng": 69.2401,
+      "posts": []
+    },
+    {
+      "name": "India",
+      "lat": 28.6139,
+      "lng": 77.2090,
+      "posts": []
+    },
+    {
+      "name": "Taiwan",
+      "lat": 25.0330,
+      "lng": 121.5654,
+      "posts": []
+    },
+    {
+      "name": "Yunnan, China",
+      "lat": 25.0453,
+      "lng": 102.7097,
+      "posts": []
+    },
+    {
+      "name": "Sichuan, China",
+      "lat": 30.6509,
+      "lng": 104.0757,
+      "posts": []
+    },
+    {
+      "name": "Thailand",
+      "lat": 13.7563,
+      "lng": 100.5018,
+      "posts": []
+    }
+  ]
+}
