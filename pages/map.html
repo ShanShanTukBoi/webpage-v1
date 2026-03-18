@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Map</title>
 
   <!-- Leaflet CSS -->
@@ -12,26 +13,28 @@
 
   <a href="../index.html" class="btn map-back" title="Back to homepage">← Home</a>
 
-  <!-- Map -->
-  <div id="map"></div>
+  <main>
+    <!-- Map -->
+    <div id="map" role="region" aria-label="Travel Map"></div>
 
-  <!-- Sidebar -->
-  <div id="sidebar">
-    <div id="sidebar-controls">
-      <button id="expand">⤢</button>
-      <button id="close">×</button>
-    </div>
-    <div id="content">
-      <h2>Travel Map</h2>
-      <p>Click a marker to see posts from that location.</p>
-    </div>
-  </div>
+    <!-- Sidebar -->
+    <aside id="sidebar" aria-hidden="true">
+      <div id="sidebar-controls">
+        <button id="expand" aria-label="Expand sidebar">⤢</button>
+        <button id="close" aria-label="Close sidebar">×</button>
+      </div>
+      <div id="content">
+        <h2>Travel Map</h2>
+        <p>Click a marker to see posts from that location.</p>
+      </div>
+    </aside>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="hidden">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Expanded photo">
-  </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden" aria-hidden="true">
+      <span id="lightbox-close" role="button" aria-label="Close image">&times;</span>
+      <img id="lightbox-img" src="" alt="Expanded photo">
+    </div>
+  </main>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

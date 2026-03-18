@@ -1,7 +1,5 @@
-
-/* Get the .json we are trying to load, default to Europe 2024  */
 const params = new URLSearchParams(window.location.search);
-const trip = params.get("trip") || "europe2024"; // default
+const trip = params.get("trip") || "europe2024";
 const dataFile = `../data/${trip}.json`;
 
 const map = L.map('map').setView([20, 120], 3);
@@ -12,23 +10,18 @@ const sidebar = document.getElementById("sidebar");
 const content = document.getElementById("content");
 const expandBtn = document.getElementById("expand");
 const closeBtn = document.getElementById("close");
-
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightboxClose = document.getElementById("lightbox-close");
 
-// Load trip data
 fetch(dataFile)
   .then(res => res.json())
   .then(data => {
-
     document.title = data.title || "Travel Map";
-
     const coords = [];
     let foundCurrent = false;
 
     data.locations.forEach((loc, index) => {
-
       if (foundCurrent) loc.future = true;
       if (loc.current) foundCurrent = true;
 
@@ -52,14 +45,13 @@ fetch(dataFile)
     map.fitBounds(route.getBounds());
   });
 
-// Open sidebar with posts
 function openSidebar(location) {
   let html = `<h2>${location.name}</h2>`;
   if (location.posts) {
     location.posts.forEach(post => {
       html += `<h3>${post.title}</h3>`;
       html += `<p>${post.text}</p>`;
-      if (post.photos && post.photos.length) {
+      if (post.photos?.length) {
         html += `<div class="post-photos">`;
         post.photos.forEach(photo => {
           html += `<img src="${photo}" alt="Photo from ${location.name}">`;
@@ -70,46 +62,38 @@ function openSidebar(location) {
   }
   content.innerHTML = html;
   sidebar.classList.add("open");
+  sidebar.setAttribute("aria-hidden", "false");
 
-  // Attach lightbox to all sidebar images
-  // Lightbox click
   document.querySelectorAll("#sidebar img").forEach(img => {
     img.addEventListener("click", () => {
       lightboxImg.src = img.src;
       lightbox.classList.remove("hidden");
-
-      // Force size via JS
-      lightboxImg.style.width = window.innerWidth * 0.9 + "px";
-      lightboxImg.style.height = "auto";
+      lightbox.setAttribute("aria-hidden", "false");
     });
   });
 
-  setTimeout(() => map.invalidateSize(), 310);
+  setTimeout(() => map.invalidateSize(), 350);
 }
 
-// Sidebar controls
 expandBtn.onclick = () => {
   if (!sidebar.classList.contains("open")) return;
   sidebar.classList.toggle("fullscreen");
   expandBtn.textContent = sidebar.classList.contains("fullscreen") ? "🡼" : "⤢";
-  setTimeout(() => map.invalidateSize(), 310);
+  setTimeout(() => map.invalidateSize(), 350);
 };
 
 closeBtn.onclick = () => {
-  sidebar.classList.remove("open");
-  sidebar.classList.remove("fullscreen");
+  sidebar.classList.remove("open", "fullscreen");
+  sidebar.setAttribute("aria-hidden", "true");
   expandBtn.textContent = "⤢";
-  setTimeout(() => map.invalidateSize(), 310);
+  setTimeout(() => map.invalidateSize(), 350);
 };
 
-// Lightbox close
-lightboxClose.addEventListener("click", () => { 
-  lightbox.classList.add("hidden"); 
-  lightboxImg.src = ""; 
-});
-lightbox.addEventListener("click", e => { 
-  if (e.target === lightbox) { 
-    lightbox.classList.add("hidden"); 
-    lightboxImg.src = ""; 
-  } 
-});
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+
+function closeLightbox() {
+  lightbox.classList.add("hidden");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+} 
