@@ -97,3 +97,11 @@ function closeLightbox() {
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImg.src = "";
 } 
+
+/* Map hint popup */
+const mapHint = document.getElementById("map-hint");
+const mapHintClose = document.getElementById("map-hint-close");
+
+mapHintClose.addEventListener("click", () => {
+  mapHint.style.display = "none";
+});
